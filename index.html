@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Seal</h1>
+    <img src="images/seal.png" alt="Seal Image">
+    <button id="cloak">Cloak</button>
+    <div>
+        <a href="/"><p>Seal</p></a>
+        <a href="/games"><img src="images/controller.png" class="controller"></a>
+        <a href="/tools"><img src="images/tools.png" class="tools"></a>
+    </div>
+</body>
+</html>
+
+<script>
+const cloakBtn = document.getElementById('cloak');
+
+const html = `
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      overflow: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    iframe::-webkit-scrollbar {
+      display: none;
+    }
+    #homeBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #444;
+        color: white;
+        cursor: pointer;
+        z-index: 10;
+    }
+  </style>
+  <button id="homeBtn">Home</button>
+  <iframe id="gameFrame" src="index.html"></iframe>
+  <script>
+    document.getElementById('homeBtn').onclick = function() {
+      document.getElementById('gameFrame').src = 'index.html';
+    };
+  <\/script>
+`;
+
+// Inject into the new window
+cloakBtn.addEventListener('click', () => {
+  const win = window.open('about:blank', '_blank');
+  win.document.write(html);
+  const iframe = win.document.getElementById('gameFrame');
+  iframe.onload = () => {
+    const doc = iframe.contentDocument || iframe.contentWindow.document;
+    const unwanted = doc.querySelector('#cloak');
+    if (unwanted) {
+      unwanted.remove();
+    }
+  };
+});
+</script>

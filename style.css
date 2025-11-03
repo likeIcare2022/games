@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+    flex-direction: column;  /* optional: stack children vertically */
+    background-color: #121212; /* optional: light gray background */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  background-color: transparent; /* or use a semi-transparent overlay */
+  z-index: 10;
+  font-family: 'Arial', sans-serif;
+}
+
+html::-webkit-scrollbar {
+  display: none;                  /* Chrome, Safari */
+}
+
+img {
+    margin-bottom: 10%;
+    display: block;
+}
+
+p {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  margin: 0;                   /* remove default spacing */
+  line-height: 50px;           /* match the image height */
+  margin-right: 30px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+div {
+  position: absolute;
+  bottom: 10%;
+  background-color: #2e2e2e;
+  padding: 10px 30px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.controller {
+  filter: invert(100%) brightness(200%);
+  width: 50px;
+  height: 50px;
+  display: inline-block;       /* ensures it's treated like text */
+  vertical-align: middle;      /* aligns with text baseline */
+  margin: 0 20px;                   /* remove any default spacing */
+}
+
+.tools {
+    filter: invert(100%) brightness(200%);
+    width: 30px;
+    height: 30px;
+    display: inline-block;       /* ensures it's treated like text */
+    vertical-align: middle;      /* aligns with text baseline */
+    margin: 0; 
+    margin-left: 5px;
+}
+
+#cloak {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 11; /* Ensure it stays above other elements */
+}

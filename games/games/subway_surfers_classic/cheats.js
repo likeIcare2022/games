@@ -18,7 +18,7 @@ function createLockObject() {
 
     // Add the lock image
     const lockImg = document.createElement('img');
-    lockImg.src = 'lock.png';
+    lockImg.src = '/games/games/subway_surfers_classic/lock.png';
     lockImg.style.width = '30px';
     lockImg.style.height = '30px';
     tab.appendChild(lockImg);

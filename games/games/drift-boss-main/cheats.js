@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add the lock image
     const lockImg = document.createElement('img');
-    lockImg.src = 'lock.png';
+    lockImg.src = '/games/games/drift-boss/lock.png';
     lockImg.style.width = '30px';
     lockImg.style.height = '30px';
     tab.appendChild(lockImg);

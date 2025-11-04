@@ -19,6 +19,7 @@ body {
   padding: 20px;
   width: 35%;         /* Or set a max-width like 800px */
   justify-content: center; /* Optional: center items horizontally */
+  transform: translateX(0%);
 }
 
 .imageButton {

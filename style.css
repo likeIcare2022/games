@@ -86,3 +86,8 @@ div {
     cursor: pointer;
     z-index: 11; /* Ensure it stays above other elements */
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

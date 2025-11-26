@@ -94,3 +94,52 @@ h1 {
 html::-webkit-scrollbar {
   display: none;                  /* Chrome, Safari */
 }
+
+.footer p {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  margin: 0;                   /* remove default spacing */
+  line-height: 50px;           /* match the image height */
+  margin-right: 30px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.footer {
+  position: fixed;              /* or sticky, depending on your scroll behavior */
+  bottom: 10%;                  /* adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2e2e2e;
+  padding: 10px 30px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 9999;                /* <-- ensures it sits above other elements */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+}
+
+
+.controller {
+  filter: invert(100%) brightness(200%);
+  width: 50px;
+  height: 50px;
+  display: inline-block;       /* ensures it's treated like text */
+  vertical-align: middle;      /* aligns with text baseline */
+  margin: 0 20px;                   /* remove any default spacing */
+}
+
+.tools {
+    filter: invert(100%) brightness(200%);
+    width: 30px;
+    height: 30px;
+    display: inline-block;       /* ensures it's treated like text */
+    vertical-align: middle;      /* aligns with text baseline */
+    margin: 0; 
+    margin-left: 5px;
+}
+
+.footer a {
+  text-decoration: none;
+}
+

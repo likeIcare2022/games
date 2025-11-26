@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+</head>
+<body>
+    <iframe src="/games/games/drivemad/" id="gameFrame"></iframe>
+    <div>
+        <a href="/"><p>Seal</p></a>
+        <a href="/games"><img src="/images/controller.png" class="controller"></a>
+        <a href="/tools"><img src="/images/tools.png" class="tools"></a>
+    </div>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get query parameters from the URL
+      const params = new URLSearchParams(window.location.search);
+
+      // Look for ?load=...
+      const loadPath = params.get("load");
+
+      if (loadPath) {
+        // Set the iframe src to the requested path
+        const iframe = document.getElementById("gameFrame");
+        iframe.src = loadPath;
+        iframe.addEventListener("load", () => {
+          iframe.focus();
+        });
+      } else {
+        console.log("No 'load' parameter found in URL.");
+      }
+    });
+</script>
